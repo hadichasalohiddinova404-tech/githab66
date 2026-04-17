@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "user_admin",
+      "username": "admin",
+      "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "fullName": "Bosh administrator",
+      "role": "admin"
+    },
+    {
+      "id": "user_doc_1",
+      "username": "doctor",
+      "passwordHash": "f348d5628621f3d8f59c8cabda0f8eb0aa7e0514a90be7571020b1336f26c113",
+      "fullName": "Dr. Dilshod Karimov",
+      "role": "doctor",
+      "doctorId": "doctor_1"
+    },
+    {
+      "id": "user_patient_1",
+      "username": "patient",
+      "passwordHash": "d4587ea9ead060c13fd994f21ecfa7926272a78854a2c20136b10a3c9e53e71e",
+      "fullName": "Malika Yusupova",
+      "role": "patient",
+      "patientId": "patient_1"
+    }
+  ],
+  "patients": [
+    {
+      "id": "patient_1",
+      "fullName": "Malika Yusupova",
+      "pinfl": "12345678901234",
+      "birthDate": "1998-05-12",
+      "phone": "+998901234567",
+      "address": "Toshkent shahri",
+      "bloodGroup": "O+",
+      "emergencyContact": "Yusupov Akmal +998909998877",
+      "createdAt": "2026-04-15T12:09:47.471Z"
+    }
+  ],
+  "doctors": [
+    {
+      "id": "doctor_1",
+      "fullName": "Dr. Dilshod Karimov",
+      "specialty": "Terapevt",
+      "department": "Ichki kasalliklar"
+    }
+  ],
+  "records": [
+    {
+      "id": "record_1",
+      "patientId": "patient_1",
+      "doctorId": "doctor_1",
+      "type": "diagnosis",
+      "title": "Birlamchi ko'rik",
+      "diagnosis": "Temir tanqisligi anemiyasi",
+      "treatment": "Ferrous sulfate 2 oy",
+      "notes": "Qo'shimcha laborator tekshiruv tavsiya qilindi",
+      "createdAt": "2026-04-15T12:09:47.471Z"
+    }
+  ],
+  "consents": [
+    {
+      "id": "consent_1",
+      "patientId": "patient_1",
+      "doctorId": "doctor_1",
+      "scope": [
+        "read",
+        "write"
+      ],
+      "expiresAt": "2027-01-01T00:00:00.000Z",
+      "status": "active",
+      "grantedAt": "2026-04-15T12:09:47.471Z"
+    }
+  ],
+  "auditLogs": [],
+  "drugBatches": [
+    {
+      "id": "batch_1",
+      "batchCode": "DRUG-0001",
+      "drugName": "Amoxicillin 500mg",
+      "manufacturer": "MedLab Pharm",
+      "expiryDate": "2027-12-31",
+      "currentOwner": "Toshkent Markaziy Dorixona",
+      "status": "verified",
+      "history": [
+        {
+          "event": "registered",
+          "actor": "MedLab Pharm",
+          "timestamp": "2026-04-15T12:09:47.471Z"
+        },
+        {
+          "event": "transferred",
+          "actor": "Wholesale Distributor 1",
+          "timestamp": "2026-04-15T12:09:47.471Z"
+        }
+      ]
+    }
+  ]
+}
