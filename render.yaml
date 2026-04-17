@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: hadicha
+    runtime: node
+    plan: free
+    buildCommand: "echo no-build-needed"
+    startCommand: "node backend/server.js"
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        sync: false
+      - key: DATA_DIR
+        value: ./data
