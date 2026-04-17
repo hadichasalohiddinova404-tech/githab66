@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Husanboy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="hero-panel">
+        <p class="eyebrow">Poliklinika EMR</p>
+        <h1>Blockchain bilan himoyalangan elektron tibbiy karta tizimi</h1>
+        <p class="hero-copy">
+          Bemor roziligi, shifokor access nazorati, dori verifikatsiyasi va audit trail bitta panelda.
+        </p>
+
+        <div class="demo-box">
+          <h2>Demo loginlar</h2>
+          <p><strong>Admin:</strong> admin / admin123</p>
+          <p><strong>Doctor:</strong> doctor / doctor123</p>
+          <p><strong>Patient:</strong> patient / patient123</p>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <section class="card login-card" id="loginCard">
+          <div class="card-head">
+            <h2>Tizimga kirish</h2>
+            <span class="badge">MVP demo</span>
+          </div>
+          <form id="loginForm" class="form-grid">
+            <label>Username <input type="text" name="username" value="admin" required /></label>
+            <label>Password <input type="password" name="password" value="admin123" required /></label>
+            <button type="submit">Kirish</button>
+          </form>
+          <p id="loginMessage" class="message"></p>
+        </section>
+
+        <section id="dashboard" class="hidden">
+          <div class="topbar">
+            <div>
+              <p class="eyebrow">Boshqaruv paneli</p>
+              <h2 id="welcomeTitle">Xush kelibsiz</h2>
+            </div>
+            <button id="logoutBtn" class="ghost-btn">Chiqish</button>
+          </div>
+
+          <div class="stats-grid" id="statsGrid"></div>
+
+          <div class="content-grid">
+            <section class="card">
+              <div class="card-head">
+                <h3>Bemorlar</h3>
+                <button id="refreshPatientsBtn" class="ghost-btn">Yangilash</button>
+              </div>
+              <div id="patientsList" class="list-stack"></div>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h3>Blockchain bloklari</h3>
+                <span class="badge">Local ledger</span>
+              </div>
+              <div id="ledgerList" class="list-stack compact"></div>
+            </section>
+          </div>
+
+          <div class="content-grid two">
+            <section class="card">
+              <div class="card-head">
+                <h3>Yangi bemor</h3>
+              </div>
+              <form id="patientForm" class="form-grid">
+                <label>F.I.Sh <input name="fullName" required /></label>
+                <label>PINFL <input name="pinfl" required /></label>
+                <label>Tug'ilgan sana <input type="date" name="birthDate" required /></label>
+                <label>Telefon <input name="phone" required /></label>
+                <label>Manzil <input name="address" required /></label>
+                <label>Qon guruhi <input name="bloodGroup" required /></label>
+                <label>Favqulodda aloqa <input name="emergencyContact" required /></label>
+                <button type="submit">Bemor yaratish</button>
+              </form>
+              <p id="patientMessage" class="message"></p>
+            </section>
+
+            <section class="card">
+              <div class="card-head">
+                <h3>Dori verifikatsiyasi</h3>
+              </div>
+              <form id="drugVerifyForm" class="form-grid">
+                <label>Batch code <input name="batchCode" value="DRUG-0001" required /></label>
+                <button type="submit">Tekshirish</button>
+              </form>
+              <form id="drugRegisterForm" class="form-grid">
+                <label>Dori nomi <input name="drugName" value="Ibuprofen 200mg" required /></label>
+                <label>Batch code <input name="batchCode" value="DRUG-0002" required /></label>
+                <label>Ishlab chiqaruvchi <input name="manufacturer" value="Health Pharm" required /></label>
+                <label>Yaroqlilik <input type="date" name="expiryDate" required /></label>
+                <label>Joriy egasi <input name="currentOwner" value="Markaziy ombor" required /></label>
+                <button type="submit">Batch ro'yxatga olish</button>
+              </form>
+              <pre id="drugResult" class="result-box"></pre>
+            </section>
+          </div>
+
+          <section class="card">
+            <div class="card-head">
+              <h3>Bemor tafsiloti</h3>
+            </div>
+            <div id="patientDetail" class="detail-panel">
+              Bemorni tanlang, shu yerda karta, consent va audit ko'rinadi.
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="patientCardTemplate">
+      <button class="list-item patient-item">
+        <div>
+          <strong data-name></strong>
+          <p data-meta></p>
+        </div>
+        <span class="badge" data-id></span>
+      </button>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
