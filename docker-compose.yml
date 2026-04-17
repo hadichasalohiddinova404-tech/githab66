@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    image: node:24-alpine
+    working_dir: /workspace
+    command: sh -c "node backend/server.js"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/workspace
+    environment:
+      PORT: 3000
+      JWT_SECRET: docker-dev-secret
+      DATA_DIR: /workspace/data
